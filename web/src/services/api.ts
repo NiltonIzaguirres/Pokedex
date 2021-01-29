@@ -45,7 +45,7 @@ export default {
   getPokemons: async () => {
     const pokemons: PokemonsObject = await baseRequest(
       baseURL,
-      `?limit=10&offset=0`,
+      `?limit=21&offset=0`,
     );
     const pokemonsWithImage = getImages(pokemons);
 
