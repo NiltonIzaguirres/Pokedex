@@ -1,9 +1,15 @@
 import React from 'react';
 
+import GlobalStyled from './assets/styles/global';
 import Routes from './routes';
 
 const App: React.FC = () => {
-  return <Routes />;
+  return (
+    <>
+      <GlobalStyled />
+      <Routes />
+    </>
+  );
 };
 
 export default App;
