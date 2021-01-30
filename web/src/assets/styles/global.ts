@@ -1,6 +1,9 @@
 import { createGlobalStyle } from 'styled-components';
 
 const GlobalStyled = createGlobalStyle`
+  :root {
+    font-size: 10px;
+  }
   * {
     margin: 0;
     padding: 0;
