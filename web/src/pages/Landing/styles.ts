@@ -1,9 +1,6 @@
 import styled from 'styled-components';
 
-export const LandingPage = styled.div`
-  width: 100vw;
-  height: 100vh;
-`;
+export const LandingPage = styled.div``;
 
 export const Main = styled.main`
   display: grid;
@@ -17,7 +14,7 @@ export const Main = styled.main`
     grid-template-columns: 40% 40%;
   }
 
-  @media (min-width: 500px) {
+  @media (min-width: 1300px) {
     grid-template-columns: 27% 27% 27%;
   }
 `;
