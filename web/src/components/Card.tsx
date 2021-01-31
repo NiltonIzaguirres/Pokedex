@@ -78,7 +78,7 @@ interface CardProps {
   children?: JSX.Element;
 }
 
-const Card: React.FC<CardProps> = ({ name, url, children }) => (
+const Card: React.FC<CardProps> = ({ name, url, id, children }) => (
   <CardContainer>
     <CardHeader>
       <h1>{name}</h1>
@@ -87,7 +87,7 @@ const Card: React.FC<CardProps> = ({ name, url, children }) => (
       {children || (
         <CardPokemon>
           <img src={url} alt={name} />
-          <CardButton to="/pokemon/:id">Sobre</CardButton>
+          <CardButton to={`/pokemon/${id}`}>Sobre</CardButton>
         </CardPokemon>
       )}
     </CardMain>
