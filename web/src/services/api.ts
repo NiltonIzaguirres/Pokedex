@@ -24,11 +24,13 @@ async function getImages(pokemons: PokemonsObject) {
 
   const pokemonsWithImage = pokemons.results.map((current: Pokemon) => {
     const { name, url } = current;
-    const imageIndex = url.split('/')[6];
-    const image = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${imageIndex}.png`;
+    const index = url.split('/')[6];
+    const image = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${index}.png`;
+    const id = parseInt(index, 10);
+
     return {
       name,
-      url,
+      id,
       image,
     };
   });
