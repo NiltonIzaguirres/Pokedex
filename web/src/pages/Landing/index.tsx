@@ -5,7 +5,13 @@ import Header from '../../components/Header';
 import Loading from '../../components/Loading';
 import api from '../../services/api';
 
-import { LandingPage, Main } from './styles';
+import {
+  LandingPage,
+  Main,
+  ButtonsContainer,
+  CardsContainer,
+  Button,
+} from './styles';
 
 interface IListOfPokemons {
   count: number;
@@ -47,14 +53,20 @@ const Landing: React.FC = () => {
         <Loading />
       ) : (
         <Main>
-          {listOfPokemons.results.map((current) => (
-            <Card
-              key={current.name}
-              name={current.name}
-              url={current.image}
-              id={current.id}
-            />
-          ))}
+          <CardsContainer>
+            {listOfPokemons.results.map((current) => (
+              <Card
+                key={current.name}
+                name={current.name}
+                url={current.image}
+                id={current.id}
+              />
+            ))}
+          </CardsContainer>
+          <ButtonsContainer>
+            <Button>Anterior</Button>
+            <Button>Próximo</Button>
+          </ButtonsContainer>
         </Main>
       )}
     </LandingPage>
