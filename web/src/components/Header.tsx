@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 import pokeballIcon from '../assets/images/pokeball.png';
@@ -37,12 +38,14 @@ const Header: React.FC<HeaderProps> = ({ mainPage, pokemonName }) => (
         {mainPage ? (
           <img src={pokeballIcon} alt="Ícone da pokébola" />
         ) : (
-          <img
-            width="30px"
-            height="30px"
-            src={previousArrowIcon}
-            alt="Ícone de volta"
-          />
+          <Link to="/">
+            <img
+              width="30px"
+              height="30px"
+              src={previousArrowIcon}
+              alt="Ícone de volta"
+            />
+          </Link>
         )}
       </div>
       <div className="name">
