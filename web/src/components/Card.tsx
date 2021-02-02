@@ -10,6 +10,7 @@ const CardHeader = styled.div`
   background-color: #4062bb;
 
   color: #ebebeb;
+  padding: 1rem 2rem;
   transition: 0.2s background;
 `;
 
@@ -21,7 +22,7 @@ const CardMain = styled.div`
 
   background-color: #ebebeb;
 
-  padding: 1rem;
+  padding: 2rem;
   font-size: 1.7rem;
 
   span {
