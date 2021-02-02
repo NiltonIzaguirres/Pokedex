@@ -53,6 +53,11 @@ export default {
 
     return pokemonsWithImage;
   },
-  // getNextPokemons: async (url: string) => {},
-  // getPreviousPokemons: async (url: string) => {},
+  getPokemonsByURL: async (url: string) => {
+    const pokemons: PokemonsObject = await baseRequest(url);
+
+    const pokemonsWithImage = getImages(pokemons);
+
+    return pokemonsWithImage;
+  },
 };

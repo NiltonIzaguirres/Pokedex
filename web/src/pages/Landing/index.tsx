@@ -46,6 +46,18 @@ const Landing: React.FC = () => {
 
     loadAll();
   }, []);
+
+  const handleNext = async () => {
+    const data = await api.getPokemonsByURL(listOfPokemons.next);
+    setListOfPokemons(data);
+  };
+
+  const handlePrevious = async () => {
+    const url = `${listOfPokemons.previous}`;
+    const data = await api.getPokemonsByURL(url);
+    setListOfPokemons(data);
+  };
+
   return (
     <LandingPage>
       <Header mainPage />
@@ -64,8 +76,10 @@ const Landing: React.FC = () => {
             ))}
           </CardsContainer>
           <ButtonsContainer>
-            <Button>Anterior</Button>
-            <Button>Próximo</Button>
+            {listOfPokemons.previous !== null && (
+              <Button onClick={handlePrevious}>Anterior</Button>
+            )}
+            <Button onClick={handleNext}>Próximo</Button>
           </ButtonsContainer>
         </Main>
       )}
