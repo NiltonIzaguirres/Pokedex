@@ -1,3 +1,4 @@
+/* eslint-disable camelcase */
 import axios from 'axios';
 
 const baseURL = 'https://pokeapi.co/api/v2/pokemon';
@@ -7,6 +8,25 @@ interface PokemonsObject {
   next: string;
   previous: string | null;
   results: [];
+}
+
+interface PokemonInfo {
+  name: string;
+  sprites: {
+    front_default: string;
+  };
+  stats: {
+    base_stat: number;
+    stat: {
+      name: string;
+    };
+  }[];
+  types: {
+    slot: number;
+    type: {
+      name: string;
+    };
+  }[];
 }
 
 async function baseRequest(url: string, endPoint?: string) {
@@ -59,5 +79,11 @@ export default {
     const pokemonsWithImage = getImages(pokemons);
 
     return pokemonsWithImage;
+  },
+
+  getPokemonById: async (id: number | string) => {
+    const pokemonInfo: PokemonInfo = await baseRequest(baseURL, `/${id}`);
+
+    return pokemonInfo;
   },
 };
