@@ -88,7 +88,7 @@ const PokemonPage: React.FC = () => {
                   ))}
                 </p>
               </Card>
-              <Card name="Status">
+              <Card name="Tipos">
                 <p>
                   {pokemon.types.map((current) => (
                     <div className="type">
