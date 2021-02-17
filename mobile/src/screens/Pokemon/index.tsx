@@ -1,3 +1,4 @@
+/* eslint-disable react/no-array-index-key */
 /* eslint-disable @typescript-eslint/explicit-function-return-type */
 /* eslint-disable camelcase */
 /* eslint-disable react/jsx-one-expression-per-line */
@@ -73,19 +74,19 @@ const Pokemon: React.FC = () => {
 
   return (
     <PokemonScreen>
-      <Header title="Pokémons" previous />
+      <Header title={pokemon.name} previous />
       <Main>
         <ScrollView>
           <Card name="Status">
-            {pokemon.stats.map((current) => (
-              <Text>
+            {pokemon.stats.map((current, key) => (
+              <Text key={key}>
                 {current.stat.name}: {current.base_stat}
               </Text>
             ))}
           </Card>
           <Card name="Tipos">
-            {pokemon.types.map((current) => (
-              <Text>
+            {pokemon.types.map((current, key) => (
+              <Text key={key}>
                 {current.slot}: {current.type.name}
               </Text>
             ))}
